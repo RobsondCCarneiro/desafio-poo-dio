@@ -6,6 +6,9 @@ public class Dev {
     private String nome;
     private Set<Conteudo> conteudosInscritos = new LinkedHashSet<>();
     private Set<Conteudo> conteudosConcluidos = new LinkedHashSet<>();
+    private List<Forum> duvidas = new ArrayList<>();
+
+    
 
     public void inscreverBootcamp(Bootcamp bootcamp){
         this.conteudosInscritos.addAll(bootcamp.getConteudos());
@@ -73,5 +76,13 @@ public class Dev {
     @Override
     public int hashCode() {
         return Objects.hash(nome, conteudosInscritos, conteudosConcluidos);
+    }
+
+    public List<Forum> getDuvidas() {
+        return duvidas;
+    }
+
+    public void setDuvidas(List<Forum> duvidas) {
+        this.duvidas = duvidas;
     }
 }
